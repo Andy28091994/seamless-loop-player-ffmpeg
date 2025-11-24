@@ -1,0 +1,40 @@
+{
+  "name": "seamless-loop-player-desktop-ffmpeg",
+  "version": "1.0.0",
+  "description": "Seamless Loop Player Desktop - FFmpeg edition (bundles ffmpeg-static)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --publish never"
+  },
+  "build": {
+    "productName": "Seamless Loop Player (FFmpeg)",
+    "appId": "com.yourcompany.seamlessloop.ffmpeg",
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    }
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.1.0"
+  },
+  "devDependencies": {
+    "electron": "^26.2.0",
+    "electron-builder": "^24.6.0"
+  }
+}
